@@ -39,3 +39,18 @@ const freqEl = (arr) => {
   return mostFreqEl
 }
 console.log(freqEl([3, 5, 2, 5, 3, 3, 1, 4, 5, 5]))
+
+// Problem 4: Create a program that generates a random password of a specified length. The password should include a mix of uppercase letters, lowercase letters, numbers, and special characters.
+const passwordGen = (passLength) => {
+  const multiChars =
+    'ABCDEFGHIJKLMN012345abcdefghi!@#$%^&*()6789OPQRSTUV-_+jklmnopqrstuvWXYZwxyz=[]{}|:;<>,.?/'
+  let password = ''
+  for (let i = 0; i < passLength; i++) {
+    const randomIndex = Math.floor(Math.random() * multiChars.length)
+    const randomChar = multiChars.charAt(randomIndex)
+    password += randomChar
+  }
+  return password
+}
+
+console.log(passwordGen(12))
